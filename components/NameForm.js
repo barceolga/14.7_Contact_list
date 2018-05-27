@@ -23,13 +23,9 @@ class ContactForm extends React.Component{
     }
 
   handleSubmit(event) {
+      var contact; 
       return (
-        <div className={'app'}>
-          <ContactForm contact = {contactForm}></ContactForm>
-          <Contacts items = {contacts}>
-            <Contact item = {this.contact}></Contact>
-          </Contacts>
-        </div>
+       contact.push(contact)
       );
     event.preventDefault();
   }
