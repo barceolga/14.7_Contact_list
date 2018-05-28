@@ -1,5 +1,5 @@
 
-var contacts = [
+/*var contacts = [
   {
     id: 1,
     firstName: 'Juan',
@@ -22,7 +22,7 @@ var contacts = [
     email: 'iker.mendiettapineiro@example.com',
   }
 ];
-
+*/
 var contactForm = {
   firstName: '',
   lastName: '',
@@ -30,13 +30,30 @@ var contactForm = {
   email: ''
 }
 
-var App = React.createClass({
-  render: function() {
+
+class App extends React.Component {
+  constructor(props) {
+    super();
+
+    this.state = {
+      contacts: [],
+    };
+  }
+
+  addToContacts(newContact) {
+    this.setState({
+      contacts: [
+        ...this.state.contacts,
+        newContact
+      ],
+    });
+  }
+  render() {
     return (
-    <div className={'app'}>
-      <ContactForm contact = {contactForm}></ContactForm>
-      <Contacts items = {contacts}>{}</Contacts>
-    </div>
+      <div className={app}>
+         <ContactForm addToContacts={this.addToContacts.bind(this)}/>
+         <Contacts contacts={this.state.contacts} />
+      </div>
     );
   }
-});
+}
