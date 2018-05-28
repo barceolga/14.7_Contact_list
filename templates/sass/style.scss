@@ -39,49 +39,44 @@ body {
           margin: 10px;
         }
       }
-    }
+      .contactsList {
+        list-style-type: none;
 
-    .contactsList {
-      list-style-type: none;
-
-      .contactItem {
-        width: auto;
-        height: auto;
-        border: 4px solid #2a3c3c;
-        border-radius: 5px;
-        background-color: #faab6b;
-        margin: 10px;
-        .contactLabel  {
-          margin-left: 15px;
-          font-size: 24px;
-          font-weight: 800;
-          color: #2a3c3c;
-
-          .contactLabel_span {
+        .contactItem {
+          width: auto;
+          height: auto;
+          border: 4px solid #2a3c3c;
+          border-radius: 5px;
+          background-color: #faab6b;
+          margin: 10px;
+          .contactLabel  {
+            margin-left: 15px;
             font-size: 24px;
-            font-weight: 500;
-            color: #547878;
-            text-shadow: 1px 0.5px #2a3c3c;
+            font-weight: 800;
+            color: #2a3c3c;
+
+            .contactLabel_span {
+              font-size: 24px;
+              font-weight: 500;
+              color: #547878;
+              text-shadow: 1px 0.5px #2a3c3c;
+            }
           }
-        }
 
-        .contactEmail {
-          margin-left: 15px;
-          margin-bottom: 15px;
-          font-size: 24px;
-          font-weight: 800;
-          color: #2a3c3c;
-          .contactEmail_link {
+          .contactEmail {
+            margin-left: 15px;
+            margin-bottom: 15px;
             font-size: 24px;
-            font-weight: 600;
-            color: #dd6808;
-            text-decoration: none;
+            font-weight: 800;
+            color: #2a3c3c;
+            .contactEmail_link {
+              font-size: 24px;
+              font-weight: 600;
+              color: #dd6808;
+              text-decoration: none;
+            }
           }
         }
       }
-
-
-
-    }
-  }
+    }  
 }
