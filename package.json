@@ -5,6 +5,7 @@
   "main": "script.js",
   "scripts": {
     "start": "nodemon script.js",
+    "sass:watch": "node-sass ./templates/sass/ -wo ./templates/css/",
     "http-serve": "http-server ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
