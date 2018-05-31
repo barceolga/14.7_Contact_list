@@ -1,5 +1,5 @@
 
-/*var contacts = [
+var contacts = [
   {
     id: 1,
     firstName: 'Juan',
@@ -22,7 +22,7 @@
     email: 'iker.mendiettapineiro@example.com',
   }
 ];
-*/
+
 var contactForm = {
   firstName: '',
   lastName: '',
@@ -36,7 +36,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      contacts: [],
+      contacts: contacts,
     };
   }
 
@@ -46,11 +46,11 @@ class App extends React.Component {
         ...this.state.contacts,
         newContact
       ],
-    });
+    }); console.log(this.state);
   }
   render() {
     return (
-      <div className={app}>
+      <div className={'app'}>
          <ContactForm addToContacts={this.addToContacts.bind(this)}/>
          <Contacts contacts={this.state.contacts} />
       </div>
