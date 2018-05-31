@@ -16,14 +16,14 @@ body {
       width: 60vw;
       height: auto;
       background-color: #A0C1C1; }
-      body .app .contactForm input {
-        font-size: 18px;
+      body .app .contactForm .contactForm_container input {
+        font-size: 20px;
         font-weight: 400;
         color: #699797;
         background-color: #FCD2AF;
         margin: 10px; }
-      body .app .contactForm .submit {
-        font-size: 18px;
+      body .app .contactForm .contactForm_container .submit {
+        font-size: 20px;
         font-weight: 400;
         color: #FCD2AF;
         background-color: #699797;
