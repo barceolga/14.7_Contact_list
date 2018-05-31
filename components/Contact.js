@@ -25,8 +25,8 @@
 });*/
 
 class Contact extends React.Component {
-  constructor(item) {
-    super(item);
+  constructor(props) {
+    super();
   };
 
   render() {
@@ -52,7 +52,7 @@ class Contact extends React.Component {
         </span>
       </p>
       <p className={'contactEmail'}>
-      Correo: 
+      Correo:
         <a className={'contactEmail_link'} href={'mailto:' + this.props.item.email}>
         {this.props.item.email}
         </a>
