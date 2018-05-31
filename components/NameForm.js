@@ -27,7 +27,7 @@ class ContactForm extends React.Component{
     }
 
   handleSubmit(event) {
- this.props.addTolist({
+ this.props.addToContacts({
    firstName: this.state.firstName,
    lastName: this.state.lastName,
    secondLastName: this.state.secondLastName,
@@ -42,7 +42,7 @@ class ContactForm extends React.Component{
 
   return (
       <form className={'contactForm'} onSubmit={this.handleSubmit}>
-        <div>
+        <div className={'contactForm_container'}>
             <input
                 type="text"
                 name="firstName"
