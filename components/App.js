@@ -6,6 +6,7 @@ var contacts = [
     lastName: 'López',
     secondLastName: 'Carrillo',
     email: 'juan.lopezcarrillo@example.com',
+    mobile: '0034 678 111 222 333'
   },
   {
     id: 2,
@@ -13,6 +14,7 @@ var contacts = [
     lastName: 'Delgado',
     secondLastName: 'Pérez',
     email: 'maria.delgadoperez@example.com',
+      mobile: '0034 678 111 222 334'
   },
   {
     id: 3,
@@ -20,6 +22,7 @@ var contacts = [
     lastName: 'Mendietta',
     secondLastName: 'Piñeiro',
     email: 'iker.mendiettapineiro@example.com',
+      mobile: '0034 678 111 222 335'
   }
 ];
 
@@ -27,7 +30,8 @@ var contactForm = {
   firstName: '',
   lastName: '',
   secondLastName: '',
-  email: ''
+  email: '',
+  mobile: ''
 }
 
 
