@@ -3,7 +3,7 @@ class Contacts extends React.Component {
 
       getContacts() {
         return this.props.contacts.map(item => {
-         return <Contact item={item} key={item.id} />
+         return <Contact item={item} key={item.id} removeContact={this.props.removeContact} />
 
        });
    }
