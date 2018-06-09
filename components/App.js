@@ -5,24 +5,24 @@ var contacts = [
     firstName: 'Juan',
     lastName: 'López',
     secondLastName: 'Carrillo',
-    email: 'juan.lopezcarrillo@example.com',
-    mobile: '0034 678 111 222 333'
+    mobile: '0034 678 111 222 333',
+    email: 'juan.lopezcarrillo@example.com'
   },
   {
     id: 2,
     firstName: 'María',
     lastName: 'Delgado',
     secondLastName: 'Pérez',
-    email: 'maria.delgadoperez@example.com',
-      mobile: '0034 678 111 222 334'
+    mobile: '0034 678 111 222 333',
+    email: 'maria.delgadoperez@example.com'
   },
   {
     id: 3,
     firstName: 'Iker',
     lastName: 'Mendietta',
     secondLastName: 'Piñeiro',
-    email: 'iker.mendiettapineiro@example.com',
-      mobile: '0034 678 111 222 335'
+    mobile: '0034 678 111 222 335',
+    email: 'iker.mendiettapineiro@example.com'
   }
 ];
 
@@ -30,8 +30,8 @@ var contactForm = {
   firstName: '',
   lastName: '',
   secondLastName: '',
-  email: '',
-  mobile: ''
+  mobile: '',
+  email: ''
 }
 
 
@@ -52,11 +52,17 @@ class App extends React.Component {
       ],
     }); console.log(this.state);
   }
+
+  removeContact(id) {
+    this.setState({
+      contacts: this.state.contacts.filter(item => item.id !== id)
+    })
+  }
   render() {
     return (
       <div className={'app'}>
-         <ContactForm addToContacts={this.addToContacts.bind(this)}/>
-         <Contacts contacts={this.state.contacts} />
+         <ContactForm addToContacts={this.addToContacts.bind(this)} />
+         <Contacts contacts={this.state.contacts} removeContact={this.removeContact.bind(this)}/>
       </div>
     );
   }
