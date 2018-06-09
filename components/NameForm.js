@@ -31,8 +31,8 @@ class ContactForm extends React.Component{
    firstName: this.state.firstName,
    lastName: this.state.lastName,
    secondLastName: this.state.secondLastName,
-   email: this.state.email,
    mobile: this.state.mobile,
+   email: this.state.email,
    id: (new Date().getTime()),
  });
 
@@ -67,17 +67,17 @@ class ContactForm extends React.Component{
             />
             <input
                 type="text"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                placeholder="Correo electrónico"
-            />
-            <input
-                type="text"
                 name="mobile"
                 value={this.state.mobile}
                 onChange={this.handleChange}
                 placeholder="Teléfono móvil"
+            />
+            <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                placeholder="Correo electrónico"
             />
             <input
                 className={'submit'}
