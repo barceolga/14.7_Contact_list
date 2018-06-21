@@ -65,7 +65,7 @@ body {
     body .app .contactsList {
       list-style-type: none; }
       body .app .contactsList .contactItem {
-        width: 500px;
+        width: 540px;
         height: auto;
         border: 4px solid #2a3c3c;
         border-radius: 5px;
@@ -103,9 +103,13 @@ body {
               color: #dd6808;
               text-decoration: none; }
         body .app .contactsList .contactItem .contactButton {
-          width: 60;
-          height: auto; }
-          body .app .contactsList .contactItem .contactButton .contactButton_button {
+          width: 100;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-start; }
+          body .app .contactsList .contactItem .contactButton .contactButton_button, body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
             font-size: 25px;
             font-weight: 800;
             color: #FCD2AF;
@@ -114,4 +118,9 @@ body {
             height: 40px;
             text-align: center;
             text-transform: uppercase;
-            margin: 10px; }
+            margin: 10px 10px; }
+          body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
+            font-size: 15px;
+            text-transform: none;
+            width: 80px;
+            border-radius: 5px; }

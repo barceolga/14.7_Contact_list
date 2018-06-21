@@ -80,7 +80,7 @@ body {
         list-style-type: none;
 
         .contactItem {
-          width: 500px;
+          width: 540px;
           height: auto;
           border: 4px solid #2a3c3c;
           border-radius: 5px;
@@ -127,8 +127,13 @@ body {
             }
           }
           .contactButton {
-              width: 60;
+              width: 100;
               height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              justify-content: flex-start;
+
             .contactButton_button {
               font-size: 25px;
               font-weight: 800;
@@ -138,7 +143,14 @@ body {
               height: 40px;
               text-align: center;
               text-transform: uppercase;
-              margin: 10px;
+              margin: 10px 10px;
+            }
+            .contactButton_button_edit {
+              @extend .contactButton_button;
+              font-size: 15px;
+              text-transform: none;
+              width: 80px;
+              border-radius: 5px;
             }
           }
         }
