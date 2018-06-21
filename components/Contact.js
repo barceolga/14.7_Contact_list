@@ -4,10 +4,15 @@ class Contact extends React.Component {
   constructor(props) {
     super();
     this.handleClick = this.handleClick.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   };
 
   handleClick(event) {
     this.props.removeContact(this.props.item.id)
+  }
+
+  handleEdit(event) {
+    this.props.editContact(this.props.item.id)
   }
 
   render() {
@@ -55,6 +60,7 @@ class Contact extends React.Component {
       </div>
       <div className={'contactButton'}>
         <button className={'contactButton_button'} onClick={this.handleClick}>x</button>
+        <button className={'contactButton_button_edit'} onClick={this.handleEdit}>Editar</button>
       </div>
     </div>
     );
