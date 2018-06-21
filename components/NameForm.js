@@ -10,6 +10,7 @@ class ContactForm extends React.Component{
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   handleChange(event) {
@@ -17,27 +18,60 @@ class ContactForm extends React.Component{
       const value = target.value;
       const name = target.name;
 
-        console.log(event);
-        console.log(event.target.name);
-        console.log(event.target.value);
-
       this.setState({
         [name]: value
       });
     }
+    onClick(event){
+      this.setState({
+        clicked: true
+      });
+    }
 
   handleSubmit(event) {
- this.props.addToContacts({
-   firstName: this.state.firstName,
-   lastName: this.state.lastName,
-   secondLastName: this.state.secondLastName,
-   mobile: this.state.mobile,
-   email: this.state.email,
-   id: (new Date().getTime()),
- });
 
+     this.props.addToContacts({
+       firstName: this.state.firstName,
+       lastName: this.state.lastName,
+       secondLastName: this.state.secondLastName,
+       mobile: this.state.mobile,
+       email: this.state.email,
+       id: (new Date().getTime()),
+     });
+      event.preventDefault();
+  }
+
+  handleEdit(event) {
+    if(!this.state.id) {
+      return
+    }
+      event.preventDefault();
+     this.props.changeContact({
+       firstName: this.state.firstName,
+       lastName: this.state.lastName,
+       secondLastName: this.state.secondLastName,
+       mobile: this.state.mobile,
+       email: this.state.email,
+       id: this.state.id
+     });
+  }
+
+  switchToAddMode(event){
+    this.setState({
+      firstName: '',
+      lastName: '',
+      secondLastName: '',
+      email: '',
+      id: ''
+    })
     event.preventDefault();
   }
+
+componentWillReceiveProps(nextProps) {
+  this.setState({
+    ...nextProps.editContact
+  });
+}
 
   render() {
 
@@ -80,9 +114,18 @@ class ContactForm extends React.Component{
                 placeholder="Correo electrónico"
             />
             <input
+                ref = "addContact"
                 className={'submit'}
                 type="submit"
                 value= "Añadir contacto" />
+            <button
+              className={'submit'}
+              onClick={this.switchToAddMode.bind(this)}
+              > Reiniciar </button>
+              <button
+                className={'submit'}
+                onClick={this.handleEdit.bind(this)}
+                > Editar contacto </button>
           </div>
       </form>
     );
