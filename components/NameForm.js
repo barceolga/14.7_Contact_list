@@ -10,7 +10,6 @@ class ContactForm extends React.Component{
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.onClick = this.onClick.bind(this);
   }
 
   handleChange(event) {
@@ -20,11 +19,6 @@ class ContactForm extends React.Component{
 
       this.setState({
         [name]: value
-      });
-    }
-    onClick(event){
-      this.setState({
-        clicked: true
       });
     }
 
