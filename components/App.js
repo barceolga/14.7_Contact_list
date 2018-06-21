@@ -51,7 +51,7 @@ class App extends React.Component {
         ...this.state.contacts,
         newContact
       ],
-    }); console.log(this.state);
+    }); 
   }
 
   removeContact(id) {
@@ -70,15 +70,34 @@ class App extends React.Component {
     this.removeAllContacts();
   }
 
+  editContact(id){
+    const editContact = this.state.contacts.find(item=>item.id===id);
+    this.setState({
+      editContact: editContact
+    })
+  }
+
+
+  changeContact(contact) {
+    let filteredContact = this.state.contacts.filter(item=>item.id!==contact.id);
+    let changeContact = {...contact};
+    let filterContact = [...filteredContact, changeContact];
+    this.setState({
+      contacts: filterContact
+    });
+  }
   render() {
     return (
       <div className={'app'}>
-         <ContactForm addToContacts={this.addToContacts.bind(this)} />
+         <ContactForm
+         addToContacts={this.addToContacts.bind(this)}
+         editContact={this.state.editContact}
+         changeContact={this.changeContact.bind(this)}/>
          <div className={'app_title'}>
             <h1>Lista de contactos</h1>
             <button onClick={this.handleOnClick}>Borrar lista</button>
           </div>
-         <Contacts contacts={this.state.contacts} removeContact={this.removeContact.bind(this)}/>
+         <Contacts contacts={this.state.contacts} removeContact={this.removeContact.bind(this)} editContact={this.editContact.bind(this)} changeContact={this.changeContact.bind(this)} />
       </div>
     );
   }
