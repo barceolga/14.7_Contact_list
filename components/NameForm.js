@@ -72,54 +72,58 @@ componentWillReceiveProps(nextProps) {
   return (
       <form className={'contactForm'} onSubmit={this.handleSubmit}>
         <div className={'contactForm_container'}>
-            <input
-                type="text"
-                name="firstName"
-                value={this.state.firstName}
-                onChange={this.handleChange}
-                placeholder="Nombre"
-            />
-            <input
-                type="text"
-                name="lastName"
-                value={this.state.lastName}
-                onChange={this.handleChange}
-                placeholder="Primer apellido"
-            />
-            <input
-                type="text"
-                name="secondLastName"
-                value={this.state.secondLastName}
-                onChange={this.handleChange}
-                placeholder="Segundo apellido"
-            />
-            <input
-                type="text"
-                name="mobile"
-                value={this.state.mobile}
-                onChange={this.handleChange}
-                placeholder="Teléfono móvil"
-            />
-            <input
-                type="text"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange}
-                placeholder="Correo electrónico"
-            />
-            <input
-                ref = "addContact"
-                className={'submit'}
-                type="submit"
-                value= "Añadir contacto" />
-            <button
-              className={'submit'}
-              onClick={this.switchToAddMode.bind(this)}
-              > Reiniciar </button>
+          <div className={'contactForm_container-inputs'}>
+              <input
+                  type="text"
+                  name="firstName"
+                  value={this.state.firstName}
+                  onChange={this.handleChange}
+                  placeholder="Nombre"
+              />
+              <input
+                  type="text"
+                  name="lastName"
+                  value={this.state.lastName}
+                  onChange={this.handleChange}
+                  placeholder="Primer apellido"
+              />
+              <input
+                  type="text"
+                  name="secondLastName"
+                  value={this.state.secondLastName}
+                  onChange={this.handleChange}
+                  placeholder="Segundo apellido"
+              />
+              <input
+                  type="text"
+                  name="mobile"
+                  value={this.state.mobile}
+                  onChange={this.handleChange}
+                  placeholder="Teléfono móvil"
+              />
+              <input
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  placeholder="Correo electrónico"
+              />
+            </div>
+            <div className={'contactForm_container-buttons'}>
+              <input
+                  ref = "addContact"
+                  className={'submit'}
+                  type="submit"
+                  value= "Añadir contacto" />
               <button
                 className={'submit'}
-                onClick={this.handleEdit.bind(this)}
-                > Editar contacto </button>
+                onClick={this.switchToAddMode.bind(this)}
+                > Reiniciar </button>
+                <button
+                  className={'submit'}
+                  onClick={this.handleEdit.bind(this)}
+                  > Editar contacto </button>
+            </div>
           </div>
       </form>
     );
