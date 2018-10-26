@@ -19,7 +19,7 @@ class Contact extends React.Component {
     return (
     <div className={'contactItem'}>
       <div className={'contactImage'}>
-        <img className={'contactImage_avatar'} src={'./components/contact.png'}/>
+        <img className={'contactImage_avatar'} src={'./images/Avatar.png'}/>
       </div>
       <div className={'contactData'}>
         <p className={'contactLabel'}>
@@ -59,8 +59,8 @@ class Contact extends React.Component {
         </p>
       </div>
       <div className={'contactButton'}>
-        <button className={'contactButton_button'} onClick={this.handleClick}>x</button>
-        <button className={'contactButton_button_edit'} onClick={this.handleEdit}>Editar</button>
+        <button className={'contactButton_button'} onClick={this.handleClick}><i className={'fas fa-trash'}></i></button>
+        <button className={'contactButton_button_edit'} onClick={this.handleEdit}><i className={'far fa-edit'}></i></button>
       </div>
     </div>
     );
