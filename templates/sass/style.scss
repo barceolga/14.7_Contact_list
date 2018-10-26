@@ -11,40 +11,63 @@ body {
     height: auto;
     background-color: #FCD2AF;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    .app_form {
+      position: relative;
+    }
     .contactForm {
+      position: fixed;
+      top: 0;
+      left: 50px;
       margin: 25px;
-      width: 60vw;
+      width: auto;
       height: auto;
       background-color: #A0C1C1;
+
       .contactForm_container {
-            input {
-            font-size: 20px;
-            font-weight: 400;
-            color: #699797;
-            background-color: #FCD2AF;
-            margin: 10px;
+        display: flex;
+        flex-direction: row;
+         .contactForm_container-inputs {
+           display: flex;
+           flex-direction: column;
+           input {
+           font-size: 20px;
+           font-weight: 400;
+           color: #699797;
+           background-color: #FCD2AF;
+           margin: 10px;
           }
-          .submit {
-            font-size: 20px;
-            font-weight: 400;
-            color: #FCD2AF;
-            background-color: #699797;
-            width: 200px;
-            height: 50px;
-            text-align: center;
-            margin: 10px;
-            transition: 1s linear;
-            cursor: pointer;
-            &:hover {
-              color: #699797;
-              background-color: #FCD2AF;
+         }
+          .contactForm_container-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            .submit {
+              font-size: 20px;
+              font-weight: 400;
+              color: #FCD2AF;
+              background-color: #699797;
+              width: 200px;
+              height: 50px;
+              text-align: center;
+              margin: 10px;
+              transition: 1s linear;
+              cursor: pointer;
+              &:hover {
+                color: #699797;
+                background-color: #FCD2AF;
+              }
             }
           }
         }
+      }
+      .app_list {
+        position: absolute;
+        top: 0;
+        right: 50px;
       }
       .app_title {
         display: flex;
@@ -142,14 +165,10 @@ body {
               width: 40px;
               height: 40px;
               text-align: center;
-              text-transform: uppercase;
               margin: 10px 10px;
             }
             .contactButton_button_edit {
               @extend .contactButton_button;
-              font-size: 15px;
-              text-transform: none;
-              width: 80px;
               border-radius: 5px;
             }
           }

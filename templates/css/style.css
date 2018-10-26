@@ -8,34 +8,54 @@ body {
     height: auto;
     background-color: #FCD2AF;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center; }
+    body .app .app_form {
+      position: relative; }
     body .app .contactForm {
+      position: fixed;
+      top: 0;
+      left: 50px;
       margin: 25px;
-      width: 60vw;
+      width: auto;
       height: auto;
       background-color: #A0C1C1; }
-      body .app .contactForm .contactForm_container input {
-        font-size: 20px;
-        font-weight: 400;
-        color: #699797;
-        background-color: #FCD2AF;
-        margin: 10px; }
-      body .app .contactForm .contactForm_container .submit {
-        font-size: 20px;
-        font-weight: 400;
-        color: #FCD2AF;
-        background-color: #699797;
-        width: 200px;
-        height: 50px;
-        text-align: center;
-        margin: 10px;
-        transition: 1s linear;
-        cursor: pointer; }
-        body .app .contactForm .contactForm_container .submit:hover {
-          color: #699797;
-          background-color: #FCD2AF; }
+      body .app .contactForm .contactForm_container {
+        display: flex;
+        flex-direction: row; }
+        body .app .contactForm .contactForm_container .contactForm_container-inputs {
+          display: flex;
+          flex-direction: column; }
+          body .app .contactForm .contactForm_container .contactForm_container-inputs input {
+            font-size: 20px;
+            font-weight: 400;
+            color: #699797;
+            background-color: #FCD2AF;
+            margin: 10px; }
+        body .app .contactForm .contactForm_container .contactForm_container-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around; }
+          body .app .contactForm .contactForm_container .contactForm_container-buttons .submit {
+            font-size: 20px;
+            font-weight: 400;
+            color: #FCD2AF;
+            background-color: #699797;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            margin: 10px;
+            transition: 1s linear;
+            cursor: pointer; }
+            body .app .contactForm .contactForm_container .contactForm_container-buttons .submit:hover {
+              color: #699797;
+              background-color: #FCD2AF; }
+    body .app .app_list {
+      position: absolute;
+      top: 0;
+      right: 50px; }
     body .app .app_title {
       display: flex;
       flex-direction: column;
@@ -117,10 +137,6 @@ body {
             width: 40px;
             height: 40px;
             text-align: center;
-            text-transform: uppercase;
             margin: 10px 10px; }
           body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
-            font-size: 15px;
-            text-transform: none;
-            width: 80px;
             border-radius: 5px; }
