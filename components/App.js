@@ -51,7 +51,7 @@ class App extends React.Component {
         ...this.state.contacts,
         newContact
       ],
-    }); 
+    });
   }
 
   removeContact(id) {
@@ -89,15 +89,19 @@ class App extends React.Component {
   render() {
     return (
       <div className={'app'}>
-         <ContactForm
-         addToContacts={this.addToContacts.bind(this)}
-         editContact={this.state.editContact}
-         changeContact={this.changeContact.bind(this)}/>
-         <div className={'app_title'}>
+        <div className={'app_form'}>
+             <ContactForm
+             addToContacts={this.addToContacts.bind(this)}
+             editContact={this.state.editContact}
+             changeContact={this.changeContact.bind(this)}/>
+        </div>
+        <div className={'app_list'}>
+          <div className={'app_title'}>
             <h1>Lista de contactos</h1>
             <button onClick={this.handleOnClick}>Borrar lista</button>
           </div>
          <Contacts contacts={this.state.contacts} removeContact={this.removeContact.bind(this)} editContact={this.editContact.bind(this)} changeContact={this.changeContact.bind(this)} />
+         </div>
       </div>
     );
   }
