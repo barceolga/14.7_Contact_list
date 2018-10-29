@@ -59,6 +59,7 @@ class ContactForm extends React.Component{
       firstName: '',
       lastName: '',
       secondLastName: '',
+      mobile: '',
       email: '',
       id: ''
     })
