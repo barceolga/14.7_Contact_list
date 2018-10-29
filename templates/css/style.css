@@ -2,13 +2,18 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #F2F6F6;
+  background-color: #595959;
   overflow-y: auto;
   overflow-x: hidden; }
+  body button {
+    border: none; }
+  body input {
+    border: none;
+    padding-left: 5px; }
   body .app {
     width: 100vw;
     height: auto;
-    background-color: #FCD2AF;
+    background-color: #595959;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -21,7 +26,7 @@ body {
     body .app .contactForm {
       width: auto;
       height: auto;
-      background-color: #A0C1C1; }
+      background: linear-gradient(to left, #1A2C2C, #009999, #00FFFF, #009999, #1A2C2C); }
       body .app .contactForm .contactForm_container {
         display: flex;
         flex-direction: row; }
@@ -31,8 +36,8 @@ body {
           body .app .contactForm .contactForm_container .contactForm_container-inputs input {
             font-size: 20px;
             font-weight: 400;
-            color: #699797;
-            background-color: #FCD2AF;
+            color: #2a3c3c;
+            background-color: #FEB3B3;
             margin: 10px; }
         body .app .contactForm .contactForm_container .contactForm_container-buttons {
           display: flex;
@@ -42,8 +47,8 @@ body {
           body .app .contactForm .contactForm_container .contactForm_container-buttons .submit {
             font-size: 20px;
             font-weight: 400;
-            color: #FCD2AF;
-            background-color: #699797;
+            color: #fff;
+            background-color: #1A2C2C;
             width: 200px;
             height: 50px;
             text-align: center;
@@ -51,28 +56,28 @@ body {
             transition: 1s linear;
             cursor: pointer; }
             body .app .contactForm .contactForm_container .contactForm_container-buttons .submit:hover {
-              color: #699797;
-              background-color: #FCD2AF; }
+              color: #2a3c3c;
+              background-color: #FEB3B3; }
     body .app .app_title {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #FCD2AF;
+      background: linear-gradient(to right, #D57373, #FEB3B3, #fff, #FEB3B3, #D57373);
       height: 200px;
       width: 600px; }
       body .app .app_title h1 {
         font-size: 35px;
         font-weight: 900;
-        color: #699797;
+        color: #1A2C2C;
         text-shadow: 1.25px 1.25px #2a3c3c;
         text-align: center;
         padding: 15px; }
       body .app .app_title button {
         font-size: 20px;
         font-weight: 400;
-        color: #FCD2AF;
-        background-color: #699797;
+        color: #fff;
+        background-color: #1A2C2C;
         width: 200px;
         height: 50px;
         text-align: center;
@@ -80,8 +85,8 @@ body {
         transition: 1s linear;
         cursor: pointer; }
         body .app .app_title button:hover {
-          color: #699797;
-          background-color: #faab6b; }
+          color: #2a3c3c;
+          background-color: #D57373; }
     body .app .app_list {
       position: absolute;
       top: 0;
@@ -96,7 +101,7 @@ body {
         height: auto;
         border: 4px solid #2a3c3c;
         border-radius: 5px;
-        background-color: #e0ebeb;
+        background-color: #80ffff;
         margin: 10px;
         display: flex;
         flex-direction: row; }
@@ -117,7 +122,7 @@ body {
             body .app .contactsList .contactItem .contactData .contactLabel .contactLabel_span {
               font-size: 18px;
               font-weight: 500;
-              color: #547878; }
+              color: #5b3131; }
           body .app .contactsList .contactItem .contactData .contactEmail {
             margin-left: 15px;
             margin-bottom: 15px;
@@ -127,7 +132,7 @@ body {
             body .app .contactsList .contactItem .contactData .contactEmail .contactEmail_link {
               font-size: 18px;
               font-weight: 500;
-              color: #dd6808;
+              color: #990000;
               text-decoration: none; }
         body .app .contactsList .contactItem .contactButton {
           width: 100;
@@ -139,8 +144,8 @@ body {
           body .app .contactsList .contactItem .contactButton .contactButton_button, body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
             font-size: 25px;
             font-weight: 800;
-            color: #FCD2AF;
-            background-color: #699797;
+            color: #FEB3B3;
+            background-color: #1A2C2C;
             width: 40px;
             height: 40px;
             text-align: center;
@@ -148,10 +153,145 @@ body {
             transition: 1s linear;
             cursor: pointer; }
             body .app .contactsList .contactItem .contactButton .contactButton_button:hover, body .app .contactsList .contactItem .contactButton .contactButton_button_edit:hover {
-              background-color: #FCD2AF;
-              color: #699797; }
+              background-color: #FEB3B3;
+              color: #1A2C2C; }
           body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
             border-radius: 5px; }
             body .app .contactsList .contactItem .contactButton .contactButton_button_edit:hover {
-              background-color: #FCD2AF;
-              color: #699797; }
+              background-color: #FEB3B3;
+              color: #1A2C2C; }
+
+@media (max-width: 767px) and (orientation: portrait) {
+  body .app {
+    flex-direction: column; }
+    body .app .app_form {
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1; }
+    body .app .contactForm .contactForm_container .contactForm_container-inputs {
+      margin: 10px auto; }
+      body .app .contactForm .contactForm_container .contactForm_container-inputs input {
+        font-size: 12px;
+        margin: 5px 5px 5px 5px; }
+    body .app .contactForm .contactForm_container .contactForm_container-buttons {
+      margin: 10px auto; }
+      body .app .contactForm .contactForm_container .contactForm_container-buttons .submit {
+        width: 120px;
+        height: 30px;
+        margin: 5px;
+        font-size: 12px; }
+    body .app .app_title {
+      height: 100px;
+      width: 100%; }
+      body .app .app_title h1 {
+        font-size: 20px;
+        padding: 7px; }
+      body .app .app_title button {
+        width: 120px;
+        height: 30px;
+        margin: 5px;
+        font-size: 12px; }
+    body .app .app_list {
+      position: absolute;
+      top: 270px; }
+    body .app .contactsList .contactItem {
+      width: 100%;
+      margin: 5px; }
+      body .app .contactsList .contactItem .contactImage {
+        width: 50px;
+        height: 50px; }
+        body .app .contactsList .contactItem .contactImage .contactImage_avatar {
+          width: 50px;
+          height: 50px; }
+      body .app .contactsList .contactItem .contactData {
+        width: 65%; }
+        body .app .contactsList .contactItem .contactData .contactLabel {
+          font-size: 12px; }
+          body .app .contactsList .contactItem .contactData .contactLabel .contactLabel_span {
+            font-size: 12px; }
+        body .app .contactsList .contactItem .contactData .contactEmail {
+          font-size: 12px; }
+          body .app .contactsList .contactItem .contactData .contactEmail .contactEmail_link {
+            font-size: 12px; }
+      body .app .contactsList .contactItem .contactButton {
+        width: 50px;
+        height: auto; }
+        body .app .contactsList .contactItem .contactButton .contactButton_button, body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
+          font-size: 16px;
+          width: 30px;
+          height: 30px; }
+        body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
+          font-size: 16px;
+          width: 30px;
+          height: 30px; } }
+
+@media (max-width: 767px) and (orientation: landscape) {
+  body .app {
+    flex-direction: row; }
+    body .app .app_form {
+      width: 50%;
+      top: 0;
+      left: 0; }
+    body .app .contactForm .contactForm_container {
+      flex-direction: row; }
+      body .app .contactForm .contactForm_container .contactForm_container-inputs {
+        margin: 15px auto; }
+        body .app .contactForm .contactForm_container .contactForm_container-inputs input {
+          font-size: 12px;
+          margin: 5px 5px 5px 5px; }
+      body .app .contactForm .contactForm_container .contactForm_container-buttons {
+        margin: 15px auto; }
+        body .app .contactForm .contactForm_container .contactForm_container-buttons .submit {
+          width: 120px;
+          height: 30px;
+          margin: 5px;
+          font-size: 12px; }
+    body .app .app_title {
+      height: 100px;
+      width: 100%; }
+      body .app .app_title h1 {
+        font-size: 20px;
+        padding: 7px;
+        margin: 5px; }
+      body .app .app_title button {
+        width: 120px;
+        height: 30px;
+        margin: 5px;
+        font-size: 12px; }
+    body .app .app_list {
+      position: absolute;
+      top: 0;
+      width: 50%; }
+    body .app .contactsList {
+      margin-left: 15px; }
+      body .app .contactsList .contactItem {
+        width: 100%;
+        margin: 5px; }
+        body .app .contactsList .contactItem .contactImage {
+          width: 50px;
+          height: 50px; }
+          body .app .contactsList .contactItem .contactImage .contactImage_avatar {
+            width: 50px;
+            height: 50px; }
+        body .app .contactsList .contactItem .contactData {
+          width: 60%; }
+          body .app .contactsList .contactItem .contactData .contactLabel {
+            font-size: 12px; }
+            body .app .contactsList .contactItem .contactData .contactLabel .contactLabel_span {
+              font-size: 12px; }
+          body .app .contactsList .contactItem .contactData .contactEmail {
+            font-size: 12px; }
+            body .app .contactsList .contactItem .contactData .contactEmail .contactEmail_link {
+              font-size: 12px; }
+        body .app .contactsList .contactItem .contactButton {
+          width: 50px;
+          height: auto; }
+          body .app .contactsList .contactItem .contactButton .contactButton_button, body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
+            font-size: 16px;
+            width: 30px;
+            height: 30px; }
+          body .app .contactsList .contactItem .contactButton .contactButton_button_edit {
+            font-size: 16px;
+            width: 30px;
+            height: 30px; } }

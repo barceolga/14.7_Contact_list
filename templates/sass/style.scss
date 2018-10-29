@@ -1,17 +1,29 @@
 *{
   box-sizing: border-box;
 }
-
+$phone_portrait: "(max-width: 767px) and (orientation: portrait)";
+$phone_landscape: "(max-width: 767px) and (orientation: landscape)";
+$tablet: "(min-width: 768px) and (max-width: 991px)";
+$desktop_small: "(min-width: 992px) and (max-width: 1279px)";
+$desktop_medium: "(min-width: 1280) and (max-width: 1439px)";
+$desktop_big: "(min-width: 1440px) and (max-width: 1919px)";
+$desktop_huge: "(min-width: 1920px)";
 body {
 
-  background-color: #F2F6F6;
+  background-color: #595959;
   overflow-y: auto;
   overflow-x: hidden;
-
+  button {
+    border: none;
+  }
+  input {
+    border: none;
+    padding-left: 5px;
+  }
   .app {
     width: 100vw;
     height: auto;
-    background-color: #FCD2AF;
+    background-color: #595959;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,7 +37,7 @@ body {
     .contactForm {
       width: auto;
       height: auto;
-      background-color: #A0C1C1;
+      background: linear-gradient(to left, #1A2C2C, #009999, #00FFFF, #009999, #1A2C2C);
 
       .contactForm_container {
         display: flex;
@@ -36,8 +48,8 @@ body {
            input {
            font-size: 20px;
            font-weight: 400;
-           color: #699797;
-           background-color: #FCD2AF;
+           color: #2a3c3c;
+           background-color: #FEB3B3;
            margin: 10px;
           }
          }
@@ -49,8 +61,8 @@ body {
             .submit {
               font-size: 20px;
               font-weight: 400;
-              color: #FCD2AF;
-              background-color: #699797;
+              color: #fff;
+              background-color: #1A2C2C;
               width: 200px;
               height: 50px;
               text-align: center;
@@ -58,8 +70,8 @@ body {
               transition: 1s linear;
               cursor: pointer;
               &:hover {
-                color: #699797;
-                background-color: #FCD2AF;
+                color: #2a3c3c;
+                background-color: #FEB3B3;
               }
             }
           }
@@ -70,13 +82,13 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color:  #FCD2AF;
+        background:  linear-gradient(to right, #D57373, #FEB3B3, #fff, #FEB3B3, #D57373);
         height: 200px;
         width: 600px;
         h1 {
           font-size: 35px;
           font-weight: 900;
-          color: #699797;
+          color: #1A2C2C;
           text-shadow: 1.25px 1.25px #2a3c3c;
           text-align: center;
           padding: 15px;
@@ -84,8 +96,8 @@ body {
         button {
           font-size: 20px;
           font-weight: 400;
-          color: #FCD2AF;
-          background-color: #699797;
+          color: #fff;
+          background-color: #1A2C2C;
           width: 200px;
           height: 50px;
           text-align: center;
@@ -93,8 +105,8 @@ body {
           transition: 1s linear;
           cursor: pointer;
           &:hover {
-            color: #699797;
-            background-color: #faab6b;
+            color: #2a3c3c;
+            background-color: #D57373;
           }
         }
       }
@@ -114,7 +126,7 @@ body {
           height: auto;
           border: 4px solid #2a3c3c;
           border-radius: 5px;
-          background-color: #e0ebeb;
+          background-color: #80ffff;
           margin: 10px;
           display: flex;
           flex-direction: row;
@@ -139,7 +151,7 @@ body {
               .contactLabel_span {
                 font-size: 18px;
                 font-weight: 500;
-                color: #547878;
+                color: #5b3131;
               }
             }
             .contactEmail {
@@ -151,7 +163,7 @@ body {
               .contactEmail_link {
                 font-size: 18px;
                 font-weight: 500;
-                color: #dd6808;
+                color: #990000;
                 text-decoration: none;
               }
             }
@@ -167,8 +179,8 @@ body {
             .contactButton_button {
               font-size: 25px;
               font-weight: 800;
-              color: #FCD2AF;
-              background-color: #699797;
+              color: #FEB3B3;
+              background-color: #1A2C2C;
               width: 40px;
               height: 40px;
               text-align: center;
@@ -176,16 +188,16 @@ body {
               transition: 1s linear;
               cursor: pointer;
               &:hover {
-                background-color: #FCD2AF;
-                color: #699797;
+                background-color: #FEB3B3;
+                color: #1A2C2C;
               }
             }
             .contactButton_button_edit {
               @extend .contactButton_button;
               border-radius: 5px;
               &:hover {
-                background-color: #FCD2AF;
-                color: #699797;
+                background-color: #FEB3B3;
+                color: #1A2C2C;
               }
             }
           }
@@ -193,3 +205,197 @@ body {
       }
     }
 }
+
+@media#{$phone_portrait} {
+  body {
+      .app {
+        flex-direction: column;
+        .app_form {
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .contactForm {
+          .contactForm_container {
+            .contactForm_container-inputs {
+              margin: 10px auto;
+              input {
+                font-size: 12px;
+                margin: 5px 5px 5px 5px;
+
+              }
+            }
+            .contactForm_container-buttons {
+              margin: 10px auto;
+              .submit {
+                width: 120px;
+                height: 30px;
+                margin: 5px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .app_title {
+          height: 100px;
+          width: 100%;
+          h1 {
+            font-size: 20px;
+            padding: 7px;
+          }
+          button {
+            width: 120px;
+            height: 30px;
+            margin: 5px;
+            font-size: 12px;
+          }
+        }
+        .app_list {
+          position: absolute;
+          top: 270px;
+        }
+        .contactsList {
+          .contactItem {
+            width: 100%;
+            margin: 5px;
+            .contactImage {
+              width: 50px;
+              height: 50px;
+              .contactImage_avatar {
+                width: 50px;
+                height: 50px;
+              }
+            }
+            .contactData {
+              width: 65%;
+              .contactLabel {
+                font-size: 12px;
+                .contactLabel_span {
+                  font-size: 12px;
+                }
+              }
+              .contactEmail {
+                font-size: 12px;
+                .contactEmail_link {
+                  font-size: 12px;
+                }
+              }
+            }
+            .contactButton {
+              width: 50px;
+              height: auto;
+              .contactButton_button {
+                font-size: 16px;
+                width: 30px;
+                height: 30px;
+              }
+              .contactButton_button_edit {
+                font-size: 16px;
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media#{$phone_landscape} {
+    body {
+        .app {
+          flex-direction: row;
+          .app_form {
+            width: 50%;
+            top: 0;
+            left: 0;
+          }
+          .contactForm {
+            .contactForm_container {
+              flex-direction: row;
+              .contactForm_container-inputs {
+                margin: 15px auto;
+                input {
+                  font-size: 12px;
+                  margin: 5px 5px 5px 5px;
+
+                }
+              }
+              .contactForm_container-buttons {
+                margin: 15px auto;
+                .submit {
+                  width: 120px;
+                  height: 30px;
+                  margin: 5px;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          .app_title {
+            height: 100px;
+            width: 100%;
+            h1 {
+              font-size: 20px;
+              padding: 7px;
+              margin: 5px;
+            }
+            button {
+              width: 120px;
+              height: 30px;
+              margin: 5px;
+              font-size: 12px;
+            }
+          }
+          .app_list {
+            position: absolute;
+            top: 0;
+            width: 50%
+          }
+          .contactsList {
+            margin-left: 15px;
+            .contactItem {
+              width: 100%;
+              margin: 5px;
+              .contactImage {
+                width: 50px;
+                height: 50px;
+                .contactImage_avatar {
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+              .contactData {
+                width: 60%;
+                .contactLabel {
+                  font-size: 12px;
+                  .contactLabel_span {
+                    font-size: 12px;
+                  }
+                }
+                .contactEmail {
+                  font-size: 12px;
+                  .contactEmail_link {
+                    font-size: 12px;
+                  }
+                }
+              }
+              .contactButton {
+                width: 50px;
+                height: auto;
+                .contactButton_button {
+                  font-size: 16px;
+                  width: 30px;
+                  height: 30px;
+                }
+                .contactButton_button_edit {
+                  font-size: 16px;
+                  width: 30px;
+                  height: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
