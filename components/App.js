@@ -95,7 +95,10 @@ class App extends React.Component {
              editContact={this.state.editContact}
              changeContact={this.changeContact.bind(this)}/>
              <div className={'app_title'}>
-               <h1>Lista de contactos</h1>
+              <div>
+                <img src ="images/Contact_logo.png"/>
+                <h1>Lista de contactos</h1>
+              </div>
                <button onClick={this.handleOnClick}>Borrar lista</button>
              </div>
         </div>
