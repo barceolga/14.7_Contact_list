@@ -5,8 +5,8 @@ class ContactForm extends React.Component{
       firstName: '',
       lastName: '',
       secondLastName: '',
-      email: '',
-      message: 'Los campos marcados con * son obligatorios.'
+      email: ''
+      //message: 'Los campos marcados con * son obligatorios.'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,10 +24,10 @@ class ContactForm extends React.Component{
     }
 
   handleSubmit(event) {
-    if (!firstName.length || !lastName.length ||!mobile.length) {
+    /*if (!firstName.length || !lastName.length ||!mobile.length) {
       alert(this.state.message);
       return;
-    }
+    }*/
      this.props.addToContacts({
        firstName: this.state.firstName,
        lastName: this.state.lastName,
