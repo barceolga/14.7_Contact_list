@@ -127,7 +127,7 @@ componentWillReceiveProps(nextProps) {
                 <button
                   className={'submit'}
                   onClick={this.handleEdit.bind(this)}
-                  > Editar contacto </button>
+                  > Guardar editado </button>
             </div>
           </div>
       </form>
